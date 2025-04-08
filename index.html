@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MILK SHOP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>WELCOME TO <BR>SRI RAJARAJESHWARA MILK CENTER🥛</h1>
+    <p>Pure, Fresh & Locally Sourced Dairy Products</p>
+
+  </header>
+
+  <div class="slider">
+    <div class="slides" id="slides">
+      <img src="ALL.jpg" alt="Image 1" class="slide">
+      <img src="IMG4.jpg" alt="Image 2" class="slide">
+      <img src="CURD.jpg" alt="Image 3" class="slide">
+      <img src="GHEE.jpg" alt="Image 1" class="slide">
+      <img src="Paneer.jpg" alt="Image 2" class="slide">
+      <img src="milk.png" alt="Image 3" class="slide">
+    </div>
+    <button class="prev" id="prevBtn">❮</button>
+    <button class="next" id="nextBtn">❯</button>
+  </div>
+
+  <!-- Products Section -->
+  <section class="products">
+    <h2>🛒 ITEMS WE SELL</h2>
+    <div class="product-list">
+      <div class="product">
+        <img src="pure.jpg" alt="Milk">
+        <h3>Pure Milk</h3>
+      </div>
+      <div class="product">
+        <img src="CURD.jpg" alt="Curd">
+        <h3>Curd</h3>
+      </div>
+      <div class="product">
+        <img src="GHEE.jpg" alt="Ghee">
+        <h3>Ghee</h3>
+      </div>
+      <div class="product">
+        <img src="Paneer.jpg" alt="Paneer">
+        <h3>Paneer</h3>
+      </div>
+      <div class="product">
+        <img src="PALKOVA.jpg" alt="Paneer">
+        <h3>PALKOVA</h3>
+      </div>
+    </div>
+  </section>
+  <section class="contact">
+    <h2>📞 Contact Us</h2>
+    <p>Phone Number 1: <a href="tel:+919492800504">+91 9492800504</a><br>
+      Phone Number 2 <a href="tel:+916303297619">+91 6303297619</p>
+
+    <p>Location: SRI RAJARAJESHWARA MILK CENTER,Gannaram, Indalwai, Nizamabad.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Fresh Milk Center | Designed with ❤️</p>
+  </footer>
+
+
+  <script>
+    //   slide
+    const slides = document.getElementById('slides');
+    const slideImages = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      if (index < 0) {
+        currentIndex = slideImages.length - 1; // Loop to last slide
+      } else if (index >= slideImages.length) {
+        currentIndex = 0; // Loop to first slide
+      } else {
+        currentIndex = index;
+      }
+      slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      showSlide(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      showSlide(currentIndex + 1);
+    });
+
+    setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 4000);
+  </script>
+
+
+
+
+</body>
+
+</html>
